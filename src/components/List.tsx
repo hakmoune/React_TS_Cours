@@ -1,16 +1,8 @@
 import React from "react";
 import '../App.css';
+import { IPeople } from "../types";
 
-interface IProps {
-    people: {
-        name: string;
-        img: string;
-        age: number;
-        note?: string;
-    }[]
-};
-
-const List: React.FC<IProps> = ({ people }): JSX.Element => {
+const List: React.FC<IPeople> = ({ people }): JSX.Element => {
 
     const renderList = (): JSX.Element[] => {
         return people.map(person => {

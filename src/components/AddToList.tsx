@@ -1,27 +1,9 @@
 import React, { useState } from "react";
+import { IPerson, IPropsAddToList } from "../types";
 
-interface IState {
-    people: {
-        name: string;
-        img: string;
-        age: number;
-        note?: string;
-    }[],
-    person: {
-        name: string;
-        img: string;
-        age: number;
-        note?: string;
-    }
-};
 
-interface IProps {
-    setPeople: React.Dispatch<React.SetStateAction<IState["people"]>>;
-    people: IState["people"];
-};
-
-const AddToList: React.FC<IProps> = ({ setPeople, people }): JSX.Element => {
-    const [person, setPerson] = useState<IState["person"]>({
+const AddToList: React.FC<IPropsAddToList> = ({ setPeople, people }): JSX.Element => {
+    const [person, setPerson] = useState<IPerson>({
         name: "",
         img: "",
         age: 0,

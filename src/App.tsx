@@ -2,18 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import List from './components/List';
 import AddToList from './components/AddToList';
-
-interface IState {
-  people: {
-    name: string;
-    img: string;
-    age: number;
-    note?: string;
-  }[]
-};
+import { IPeople } from './types';
 
 function App() {
-  const [people, setPeople] = useState<IState["people"]>([
+  const [people, setPeople] = useState<IPeople["people"]>([
     {
       name: "1.Lebron James",
       img: "https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png",
